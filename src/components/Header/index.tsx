@@ -15,16 +15,18 @@ export function Header(){
     <View style={styles.container}>
         <LogoSvg/>
 
+
+        <View style={styles.logoutButton}>
+          <TouchableOpacity>
+            <Text style={styles.logoutText}>
+              Sair
+            </Text>
+          </TouchableOpacity>
         <UserPhoto
           imageUri='https://github.com/danielbarbieri.png'
           
         />
-
-        <TouchableOpacity>
-          <Text style={styles.logOutText}>
-            Sair
-          </Text>
-        </TouchableOpacity>
+        </View>
     </View>
   );
 }
