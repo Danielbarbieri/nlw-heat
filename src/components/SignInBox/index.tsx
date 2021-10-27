@@ -1,23 +1,28 @@
+
+
 import React from 'react';
-import {Button} from '../Button';
+import { View } from 'react-native';
+import { useAuth } from '../../hooks/auth';
 
-
-import {  View} from 'react-native';
-
-import { styles } from './styles';
+import { Button } from '../Button';
 import { COLORS } from '../../theme';
 
-export function SignInBox(){
+import { styles } from './styles';
+
+export function SignInBox() {
+  const { signIn, isSigningIn } = useAuth();
+
   return (
     <View style={styles.container}>
-        <Button 
-        title="ENTRAR COM O GIT HUB"
-        color={COLORS.BLACK_PRIMARY}   
+
+      <Button
+        title="ENTRAR COM O GITHUB"
+        color={COLORS.BLACK_PRIMARY}
         backgroundColor={COLORS.YELLOW}
         icon="github"
-        
-        />
-
+        onPress={signIn}
+        isLoading={isSigningIn}
+      />
     </View>
   );
 }
